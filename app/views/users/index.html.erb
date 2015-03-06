@@ -1,0 +1,91 @@
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("th").mouseover(function () {
+			// var x = $(this).attr('id');
+			// document.getElementById("demo").innerHTML = x;
+		});
+	});
+
+	// function sortBy(id){
+	// 	document.getElementById("demo").innerHTML = document.getElementById(id).innerHTML;
+	// }
+</script>
+
+<!-- <h1 id="demo" style="margin-top:90px">DEMO</h1> -->
+<nav class="navbar navbar-default navbar-fixed-top user-header">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Import CSV file', root_path , class: 'navbar-brand', style: 'color: white; margin-left: 15px;' %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	<form class="navbar-form navbar-right user-upload-form">
+    		<%= form_tag import_users_path, multipart: true do %>
+			  <%= file_field_tag :file, class: 'user-choose-file-field' %>
+			  <%= submit_tag "Import", class: 'user-import-button btn btn-primary' %>
+			<% end %>
+    	</form>
+    </div>
+  </div>
+</nav>
+
+<table id="myTable" class="table table-bordered">
+	<thead>
+		<tr class="info text-uppercase">
+			<th id="0">userID</th>
+			<th id="1">latitude</th>
+			<th id="2">longitude</th>
+			<th>smoker</th>
+			<th>drink_level</th>
+			<th>dress_preference</th>
+			<th>ambience</th>
+			<th>transport</th>
+			<th>marital_status</th>
+			<th>hijos</th>
+			<th>birth_year</th>
+			<th>interest</th>
+			<th>personality</th>
+			<th>religion</th>
+			<th>activity</th>
+			<th>color</th>
+			<th>weight</th>
+			<th>budget</th>
+			<th>height</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+		<tr>
+			<td> <%= user.userID %></td>
+			<td> <%= user.latitude %></td>
+			<td> <%= user.longitude %></td>
+			<td> <%= user.smoker %></td>
+			<td> <%= user.drink_level %></td>
+			<td> <%= user.dress_preference %></td>
+			<td> <%= user.ambience %></td>
+			<td> <%= user.transport %></td>
+			<td> <%= user.marital_status %></td>
+			<td> <%= user.hijos %></td>
+			<td> <%= user.birth_year %></td>
+			<td> <%= user.interest %></td>
+			<td> <%= user.personality %></td>
+			<td> <%= user.religion %></td>
+			<td> <%= user.activity %></td>
+			<td> <%= user.color %></td>
+			<td> <%= user.weight %></td>
+			<td> <%= user.budget %></td>
+			<td> <%= user.height %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
