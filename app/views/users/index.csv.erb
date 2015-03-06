@@ -1,0 +1,5 @@
+<%- headers = ['userID', 'latitude', 'longitude', 'smoker', 'drink_level', 'dress_preference', 'ambience', 'transport', 'marital_status', 'hijos', 'birth_year', 'interest', 'personality', 'religion', 'activity', 'color', 'weight', 'budget', 'height'] -%>
+<%= CSV.generate_line headers %>
+<%- @users.each do |user| -%>
+  <%= CSV.generate_line([user.userID, user.latitude, user.longitude, user.smoker, user.drink_level, user.dress_preference, user.ambience, user.transport, user.marital_status, user.hijos, user.birth_year, user.interest, user.personality, user.religion, user.activity, user.color, user.weight, user.budget, user.height]) %>
+<%- end -%>

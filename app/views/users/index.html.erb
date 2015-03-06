@@ -31,7 +31,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     	<div class="pull-left user-destroy-form">
     		<% unless User.count == 0 %>
-    			<%= link_to 'Destroy csv', '/destroy/', class: 'btn btn-danger' %>
+    			<%= link_to 'Destroy all', '/destroy/', class: 'btn btn-danger' %>
+    			<%= link_to 'Download CSV', users_path(format: :csv), class: 'btn btn-success' %>
     		<% end %>
     	</div>
 
