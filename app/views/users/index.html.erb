@@ -29,6 +29,12 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	<div class="pull-left user-destroy-form">
+    		<% unless User.count == 0 %>
+    			<%= link_to 'Destroy csv', '/destroy/', class: 'btn btn-danger' %>
+    		<% end %>
+    	</div>
+
     	<div class="pull-right user-upload-form">
     		<%= form_tag import_users_path, multipart: true do %>
 			  <%= file_field_tag :file, class: 'user-choose-file-field' %>

@@ -7,4 +7,9 @@ class UsersController < ApplicationController
   	User.import(params[:file])
   	redirect_to root_url, notice: "User profiles imported."
   end
+
+  def destroy
+  	User.destroy_all
+  	redirect_to root_url
+  end
 end

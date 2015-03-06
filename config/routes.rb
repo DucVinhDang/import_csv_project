@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     collection { post :import }
   end
 
+  get '/destroy/' => 'users#destroy'
+
   root to: 'users#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
