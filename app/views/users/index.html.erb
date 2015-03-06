@@ -29,12 +29,12 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    	<form class="navbar-form navbar-right user-upload-form">
+    	<div class="pull-right user-upload-form">
     		<%= form_tag import_users_path, multipart: true do %>
 			  <%= file_field_tag :file, class: 'user-choose-file-field' %>
 			  <%= submit_tag "Import", class: 'user-import-button btn btn-primary' %>
 			<% end %>
-    	</form>
+    	</div>
     </div>
   </div>
 </nav>
@@ -42,9 +42,9 @@
 <table id="myTable" class="table table-bordered">
 	<thead>
 		<tr class="info text-uppercase">
-			<th id="0">userID</th>
-			<th id="1">latitude</th>
-			<th id="2">longitude</th>
+			<th>userID</th>
+			<th>latitude</th>
+			<th>longitude</th>
 			<th>smoker</th>
 			<th>drink_level</th>
 			<th>dress_preference</th>
